@@ -19,12 +19,14 @@ import java.util.HashMap;
 public class MainActivity extends AppCompatActivity {
 
     ListView ls;
+    MyDBPers db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        db = new MyDBPers(this);
         ls = findViewById(R.id.lst);
         ArrayList<Personne> pers = getPersonsFromJSON();
 
@@ -45,6 +47,9 @@ public class MainActivity extends AppCompatActivity {
         SimpleAdapter ad = new SimpleAdapter(this,list_pers,R.layout.item_pers,from,to);
         ls.setAdapter(ad);
 
+
+        for(Personne p : pers)
+            MyDBPers.insert_personne(db.getWritableDatabase(),p);
     }
 
     public String loadJSONFromRaw(int resId) {
@@ -76,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
                 pers.add(p);
             }
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
