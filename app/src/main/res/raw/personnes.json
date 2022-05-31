@@ -1,0 +1,26 @@
+[
+  {
+    "nom": "Nicolas",
+    "prenom": "TAN",
+    "genre": "homme",
+    "age": 33
+  },
+  {
+    "nom": "Isabelle",
+    "prenom": "Khali",
+    "genre": "femme",
+    "age": 22
+  },
+  {
+    "nom": "Alex",
+    "prenom": "RFDF",
+    "genre": "homme",
+    "age": 44
+  },
+  {
+    "nom": "Nicole",
+    "prenom": "fdfdf",
+    "genre": "femme",
+    "age": 56
+  }
+]
